@@ -1,0 +1,18 @@
+{
+    auto_https  off
+    admin   off
+}
+
+:8080
+
+
+handle_path /img/* {
+    header  Cache-Control max-age=31536000
+	reverse_proxy 127.0.0.1:8001
+}
+
+
+file_server {
+    root    {env.FLIXVIDEODIR}
+    browse  media.html
+}
