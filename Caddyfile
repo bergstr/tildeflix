@@ -11,6 +11,9 @@ handle_path /img/* {
 	reverse_proxy 127.0.0.1:8001
 }
 
+file_server /flix.png {
+
+}
 
 file_server {
     root    {env.FLIXVIDEODIR}
